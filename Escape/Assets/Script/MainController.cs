@@ -17,6 +17,7 @@ public class MainController : MonoBehaviour
     private float cameraRotation = 0f;
     private float currentCameraRotation = 0f;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,10 @@ public class MainController : MonoBehaviour
       
         movePlayer();
         eyeRotation();
+  
 
     }
+
 
     void eyeRotation()  //x,y 회전(시야회전)
     {
