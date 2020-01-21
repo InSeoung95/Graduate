@@ -30,4 +30,4 @@ public class frame_count : MonoBehaviour
 }
 
 
-출처: https://ssscool.tistory.com/317 [시작]
+//출처: https://ssscool.tistory.com/317 [시작]

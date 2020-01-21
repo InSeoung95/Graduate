@@ -10,6 +10,8 @@ public class MainController : MonoBehaviour
     private float h; // 좌,우
     private float v; // 상,하
 
+    private Transform tr;
+
     //시야전환
     public Camera cam;
     public float rotateSpeed = 5f;
@@ -22,6 +24,8 @@ public class MainController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        tr = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -62,7 +66,7 @@ public class MainController : MonoBehaviour
 
         animator.SetFloat("h", h);
         animator.SetFloat("v", v);
-
+        /*
         //Time.smoothDeltaTime cpu마다 성능이 달라서 곱해준다.
         if (Input.GetKey("a"))
         {
@@ -80,6 +84,11 @@ public class MainController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (speed * Time.smoothDeltaTime));
         }
+        */
+
+        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
+
+        tr.Translate(moveDir.normalized * speed * Time.deltaTime, Space.Self);
  
     }
 }
